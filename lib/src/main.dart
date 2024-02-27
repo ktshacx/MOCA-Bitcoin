@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:bip32/bip32.dart';
 import 'package:bip39/bip39.dart' as bip39;
 import 'package:http/http.dart' as http;
-import 'package:flutter/foundation.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:moca_bitcoin/src/crypto.dart';
 import 'package:moca_bitcoin/src/magic_hash.dart';
 import 'package:moca_bitcoin/src/network.dart';
