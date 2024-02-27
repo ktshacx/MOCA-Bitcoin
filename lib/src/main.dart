@@ -10,7 +10,7 @@ import 'package:moca_bitcoin/src/network.dart';
 import 'package:bs58check/bs58check.dart' as bs58check;
 
 class MOCABitcoin {
-  String generateMnemonic() {
+  static String generateMnemonic() {
     return bip39.generateMnemonic();
   }
 
