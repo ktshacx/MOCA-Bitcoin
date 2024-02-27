@@ -10,7 +10,7 @@ import 'package:moca_bitcoin/src/network.dart';
 import 'package:bs58check/bs58check.dart' as bs58check;
 
 class MOCABitcoin {
-  String generateMnemonic() {
+  static String generateMnemonic() {
     return bip39.generateMnemonic();
   }
 
@@ -33,17 +33,17 @@ class MOCABitcoin {
     return bs58check.encode(payload);
   }
 
-  Uint8List sign(String message, Uint8List seed) {
+  static Uint8List sign(String message, Uint8List seed) {
     Uint8List messageHash = magicHash(message);
     return BIP32.fromSeed(seed).sign(messageHash);
   }
 
-  bool verify(String message, Uint8List signature, Uint8List seed) {
+  static bool verify(String message, Uint8List signature, Uint8List seed) {
     Uint8List messageHash = magicHash(message);
     return BIP32.fromSeed(seed).verify(messageHash, signature);
   }
 
-  Future<double> getBalance(String address) async {
+  static Future<double> getBalance(String address) async {
   final apiUrl = 'https://api.blockchair.com/bitcoin/dashboards/address/$address';
   try {
     final response = await http.get(Uri.parse(apiUrl));
